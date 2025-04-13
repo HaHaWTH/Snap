@@ -21,11 +21,11 @@ jobs:
                   cache: 'maven'
             - name: Build Snap
               run: mvn -V -B clean package --file pom.xml
-            - name: Upload Artifacts
-              uses: actions/upload-artifact@v4
-              with:
-                  name: Snap artifact
-                  path: ./target/snap.jar
+#            - name: Upload Artifacts
+#              uses: actions/upload-artifact@v4
+#              with:
+#                  name: Snap artifact
+#                  path: ./target/snap.jar
             - name: Release Snap
               if: github.event_name != 'pull_request'
               uses: marvinpinto/action-automatic-releases@master
